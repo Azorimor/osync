@@ -5896,7 +5896,7 @@ function Init {
 		uri=${TARGET_SYNC_DIR#ssh://*}
 		if [[ "$uri" == *"@"* ]]; then
 			# remove everything after '@'
-			REMOTE_USER=${uri%@*}
+			REMOTE_USER=${uri%%@*}
 		else
 			REMOTE_USER=$LOCAL_USER
 		fi
@@ -5928,7 +5928,7 @@ function Init {
 		uri=${INITIATOR_SYNC_DIR#ssh://*}
 		if [[ "$uri" == *"@"* ]]; then
 			# remove everything after '@'
-			REMOTE_USER=${uri%@*}
+			REMOTE_USER=${uri%%@*}
 		else
 			REMOTE_USER=$LOCAL_USER
 		fi
