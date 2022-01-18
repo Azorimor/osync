@@ -2353,7 +2353,9 @@ function TrapQuit {
 	CleanUp
 	KillChilds $SCRIPT_PID > /dev/null 2>&1
 
-	exit $exitcode
+	# exit $exitcode
+	# Osync is called as child process, exit does kill the parent
+	return $exitcode
 }
 
 function CheckEnvironment {
